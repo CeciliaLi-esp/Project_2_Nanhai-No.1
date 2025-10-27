@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Crimson+Text:ital@0;1&display=swap");
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Crimson Text", serif;
+  color: #e2f7ff;
+  background-color: #001018;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+}
+
+.page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+/* ---------------- LEFT PANEL ---------------- */
+.left-panel {
+  width: 280px;
+  background: rgba(0, 15, 30, 0.85);
+  border-right: 2px solid rgba(0, 100, 150, 0.5);
+  padding: 20px;
+  color: #b9e8ff;
+}
+
+.left-panel h2 {
+  font-family: "Cinzel Decorative", serif;
+  text-align: center;
+  margin-bottom: 12px;
+  color: #bffaff;
+  text-shadow: 0 0 10px #00faff;
+}
+
+#leaderboard {
+  list-style: none;
+  max-height: 40vh;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+#leaderboard li {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ---------------- RIGHT PANEL ---------------- */
+.right-panel {
+  width: 280px;
+  background: rgba(0, 15, 30, 0.85);
+  border-left: 2px solid rgba(0, 100, 150, 0.5);
+  padding: 20px;
+  color: #b9e8ff;
+}
+
+.right-panel h2 {
+  font-family: "Cinzel Decorative", serif;
+  text-align: center;
+  color: #bffaff;
+  text-shadow: 0 0 10px #00faff;
+  margin-bottom: 12px;
+}
+
+/* Gallery grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.artifact-thumb {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0,20,40,0.6);
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0,255,255,0.2);
+}
+
+.thumb-slice {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.thumb-slice.q1 { top: 0; left: 0; background-position: top left; }
+.thumb-slice.q2 { top: 0; right: 0; background-position: top right; }
+.thumb-slice.q3 { bottom: 0; left: 0; background-position: bottom left; }
+.thumb-slice.q4 { bottom: 0; right: 0; background-position: bottom right; }
+
+.thumb-slice.found { opacity: 1; }
+
+/* ---------------- SCENE ---------------- */
+.scene {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Centered intro box — wider to prevent line break */
+.intro {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 70%;  /* increased width */
+  background: rgba(0, 20, 40, 0.45);
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 25px rgba(0, 180, 255, 0.25);
+  text-align: center;
+}
+
+.intro h1 {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 2.4rem;
+  color: #bffaff;
+  text-shadow: 0 0 25px #004466, 0 0 40px #00ccff;
+}
+
+.tagline {
+  margin-top: 10px;
+  font-style: italic;
+  color: #aad7f8;
+  line-height: 1.6;
+}
+
+.controls { margin-top: 18px; }
+
+#username {
+  background: rgba(0, 50, 80, 0.5);
+  border: 1px solid #1ba0d6;
+  color: #bffaff;
+  padding: 8px 10px;
+  width: 180px;
+  border-radius: 4px;
+}
+
+#enterBtn {
+  background: linear-gradient(135deg, #007b9c, #004466);
+  color: #d7faff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 14px;
+  margin-left: 10px;
+  cursor: pointer;
+  font-family: "Cinzel Decorative", serif;
+}
+
+#message { display: block; margin-top: 10px; color: #80d4ff; }
+
+/* ---------------- BACKGROUND ---------------- */
+.ocean-layer {
+  position: absolute;
+  top: 200px; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+}
+
+.ocean-layer .bg {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  opacity: 0.9;
+  filter: brightness(0.8) blur(1px);
+}
+
+/* ---------------- BUTTON ---------------- */
+.collect {
+  position: absolute;
+  bottom: 80px;      /* moved lower */
+  left: 120px;       /* placed toward left */
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.1rem; /* smaller size */
+  background: radial-gradient(circle, #004b63, #002a3d);
+  padding: 10px 20px;
+  border: 2px solid #00c6ff;
+  border-radius: 8px;
+  color: #d7faff;
+  cursor: pointer;
+  z-index: 4;
+  text-shadow: 0 0 10px #00ffff;
+  animation: floating 3s ease-in-out infinite;
+}
+
+.collect:hover {
+  background: radial-gradient(circle, #0088aa, #002233);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00f0ff;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+/* ---------------- FOUND CARD ---------------- */
+.finds h2 {
+  font-family: "Cinzel Decorative", serif;
+  color: #b3f5ff;
+  text-shadow: 0 0 10px #00aacc;
+  margin-bottom: 8px;
+}
+
+.card {
+  display: flex;
+  gap: 15px;
+  background: rgba(0, 30, 50, 0.7);
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 0 14px rgba(0, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+}
+
+.card.hidden { display: none; }
+
+.artifact-visual {
+  width: 160px;
+  height: 160px;
+  border: 1px solid rgba(255,255,255,0.1);
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 0 12px rgba(0,255,255,0.25);
+}
+
+#artifactSlice {
+  width: 160px;
+  height: 160px;
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+}
+
+.q1 { background-position: top left; }
+.q2 { background-position: top right; }
+.q3 { background-position: bottom left; }
+.q4 { background-position: bottom right; }
+
+.artifact-info { flex: 1; color: #c9f8ff; }
+#artifactName { font-family: "Cinzel Decorative", serif; font-size: 1.1rem; margin-bottom: 4px; }
+#artifactBlurb { font-size: 0.9rem; color: #a7d6e6; font-style: italic; }

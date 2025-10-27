@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nanhai No.1 – Multiplayer Underwater Archaeology</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+  <body>
+  <audio id="bgm" src="sounds/underwater_sound.mp3" preload="auto" loop muted></audio>
+  <audio id="pieceSound" src="sounds/One_Piece_Sound.mp3" preload="auto"></audio>
+
+
+  <div class="page">
+    <aside class="left-panel">
+      <h2>Divers & Scores</h2>
+      <ul id="leaderboard"></ul>
+
+      <section class="finds">
+        <h2>Latest Discovery</h2>
+        <div id="foundCard" class="card hidden">
+          <div class="artifact-visual">
+            <div id="artifactSlice" class="slice q1"></div>
+          </div>
+          <div class="artifact-info">
+            <h3 id="artifactName">Artifact Name</h3>
+            <p id="artifactBlurb">Artifact description will appear here.</p>
+          </div>
+        </div>
+      </section>
+    </aside>
+
+    <main class="scene">
+      <header class="intro">
+        <h1>Nanhai No.1 Shipwreck</h1>
+        <p class="tagline">Welcome, diver. Explore the seabed and uncover the treasures of the Maritime Silk Road.</p>
+        <div class="controls">
+          <input id="username" placeholder="Enter your name" />
+          <button id="enterBtn">Join Dive</button>
+          <span id="message"></span>
+        </div>
+      </header>
+      <section class="ocean-layer">
+        <img class="bg" src="images/seabed.jpeg" alt="Seabed background" />
+        <button id="collectBtn" class="collect">Collect Artifact</button>
+      </section>
+    </main>
+
+    <aside class="right-panel">
+      <h2>Artifact Gallery</h2>
+      <div id="gallery" class="gallery"></div>
+    </aside>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

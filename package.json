@@ -1,0 +1,17 @@
+{
+  "name": "nanhai-no1-secrets",
+  "version": "1.0.0",
+  "description": "Interactive web experience - Nanhai No.1 Shipwreck Multiplayer Artifact Dive",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "lowdb": "^5.0.0",
+    "socket.io": "^4.8.1"
+  },
+  "author": "Cecilia Li",
+  "license": "ISC"
+}
