@@ -131,5 +131,6 @@ fetch("/data")
     renderGallery(data.fragments);
   });
 
+
 document.addEventListener("click", activateAudioOnce, { once: true });
 document.addEventListener("keydown", activateAudioOnce, { once: true });

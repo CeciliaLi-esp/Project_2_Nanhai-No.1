@@ -1,5 +1,38 @@
 {
-  "players": [],
+  "players": [
+    {
+      "name": "A",
+      "score": 0
+    },
+    {
+      "name": "B",
+      "score": 0
+    },
+    {
+      "name": "C",
+      "score": 0
+    },
+    {
+      "name": "D",
+      "score": 0
+    },
+    {
+      "name": "E",
+      "score": 0
+    },
+    {
+      "name": "F",
+      "score": 0
+    },
+    {
+      "name": "G",
+      "score": 45
+    },
+    {
+      "name": "H",
+      "score": 103
+    }
+  ],
   "fragments": [
     {
       "id": 1,
@@ -29,7 +62,7 @@
       "image": "images/artifacts/empty_box.jpg",
       "quadrant": 3,
       "points": 0,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 4,
@@ -41,7 +74,6 @@
       "points": 0,
       "foundBy": null
     },
-
     {
       "id": 5,
       "artifactKey": "coins",
@@ -50,23 +82,23 @@
       "image": "images/artifacts/coins.jpg",
       "quadrant": 1,
       "points": 1,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 6,
       "artifactKey": "coins",
       "artifactName": "Copper Coins",
-      "blurb": "Mint marks trace Fujian and Guangdong workshops—maritime provinces key to Song-era trade.",
+      "blurb": "Mint marks trace Fujian and Guangdong workshops—maritime provinces key to Song-era trade",
       "image": "images/artifacts/coins.jpg",
       "quadrant": 2,
       "points": 1,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 7,
       "artifactKey": "coins",
       "artifactName": "Copper Coins",
-      "blurb": "Corrosion and sand infill suggest long submersion and shifting currents across the seabed.",
+      "blurb": "Corrosion and sand infill suggest long submersion and shifting currents across the seabed",
       "image": "images/artifacts/coins.jpg",
       "quadrant": 3,
       "points": 1,
@@ -80,9 +112,8 @@
       "image": "images/artifacts/coins.jpg",
       "quadrant": 4,
       "points": 1,
-      "foundBy": null
+      "foundBy": "H"
     },
-
     {
       "id": 9,
       "artifactKey": "silver_ingot",
@@ -91,7 +122,7 @@
       "image": "images/artifacts/silver_ingot.png",
       "quadrant": 1,
       "points": 2,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 10,
@@ -101,7 +132,7 @@
       "image": "images/artifacts/silver_ingot.png",
       "quadrant": 2,
       "points": 2,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 11,
@@ -111,7 +142,7 @@
       "image": "images/artifacts/silver_ingot.png",
       "quadrant": 3,
       "points": 2,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 12,
@@ -123,16 +154,15 @@
       "points": 2,
       "foundBy": null
     },
-
     {
       "id": 13,
       "artifactKey": "longquan",
       "artifactName": "Longquan Celadon Plate",
-      "blurb": "Produced in Zhejiang’s Longquan kilns, famed for jade-green glaze and carved lotus motifs.",
+      "blurb": "Produced in Zhejiang’s Longquan kilns, famed for jade-green glaze and carved lotus motifs",
       "image": "images/artifacts/longquan_plate.jpg",
       "quadrant": 1,
       "points": 3,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 14,
@@ -142,7 +172,7 @@
       "image": "images/artifacts/longquan_plate.jpg",
       "quadrant": 2,
       "points": 3,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 15,
@@ -158,58 +188,56 @@
       "id": 16,
       "artifactKey": "longquan",
       "artifactName": "Longquan Celadon Plate",
-      "blurb": "Identical shards have been excavated as far as Egypt and Kenya.",
+      "blurb": "Identical shards have been excavated as far as Egypt and Kenya",
       "image": "images/artifacts/longquan_plate.jpg",
       "quadrant": 4,
       "points": 3,
-      "foundBy": null
+      "foundBy": "H"
     },
-
     {
       "id": 17,
       "artifactKey": "white_ewer",
-      "artifactName": "White-Glazed Ewer",
+      "artifactName": "White Glazed Ewer",
       "blurb": "Qingbai porcelain from Jingdezhen catered to export markets across Asia.",
       "image": "images/artifacts/white_ewer.png",
       "quadrant": 1,
       "points": 4,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 18,
       "artifactKey": "white_ewer",
-      "artifactName": "White-Glazed Ewer",
-      "blurb": "Its light body and thin walls made it perfect for long maritime journeys.",
+      "artifactName": "White Glazed Ewer",
+      "blurb": "Its light body and thin walls made it perfect for long maritime journeys",
       "image": "images/artifacts/white_ewer.png",
       "quadrant": 2,
       "points": 4,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 19,
       "artifactKey": "white_ewer",
-      "artifactName": "White-Glazed Ewer",
+      "artifactName": "White Glazed Ewer",
       "blurb": "Used for wine or water, merging utility and elegance.",
       "image": "images/artifacts/white_ewer.png",
       "quadrant": 3,
       "points": 4,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 20,
       "artifactKey": "white_ewer",
-      "artifactName": "White-Glazed Ewer",
+      "artifactName": "White Glazed Ewer",
       "blurb": "Its flared rim reflects Tang and Song aesthetic ideals of purity.",
       "image": "images/artifacts/white_ewer.png",
       "quadrant": 4,
       "points": 4,
       "foundBy": null
     },
-
     {
       "id": 21,
       "artifactKey": "jade_arhat",
-      "artifactName": "Jade Arhat Figure",
+      "artifactName": "Jade Arhat Figurine",
       "blurb": "A tiny jade carving carried for spiritual protection at sea.",
       "image": "images/artifacts/jade_arhat.jpg",
       "quadrant": 1,
@@ -219,7 +247,7 @@
     {
       "id": 22,
       "artifactKey": "jade_arhat",
-      "artifactName": "Jade Arhat Figure",
+      "artifactName": "Jade Arhat Figurine",
       "blurb": "Arhats represent enlightened disciples in Buddhist tradition.",
       "image": "images/artifacts/jade_arhat.jpg",
       "quadrant": 2,
@@ -229,39 +257,38 @@
     {
       "id": 23,
       "artifactKey": "jade_arhat",
-      "artifactName": "Jade Arhat Figure",
+      "artifactName": "Jade Arhat Figurine",
       "blurb": "Reflects the fusion of trade and belief along China’s southern coasts.",
       "image": "images/artifacts/jade_arhat.jpg",
       "quadrant": 3,
       "points": 5,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 24,
       "artifactKey": "jade_arhat",
-      "artifactName": "Jade Arhat Figure",
+      "artifactName": "Jade Arhat Figurine",
       "blurb": "Carved from nephrite, valued for moral purity in Song China.",
       "image": "images/artifacts/jade_arhat.jpg",
       "quadrant": 4,
       "points": 5,
-      "foundBy": null
+      "foundBy": "H"
     },
-
     {
       "id": 25,
       "artifactKey": "gold_ring",
-      "artifactName": "Gold Ring with Gemstone",
-      "blurb": "Found near crew quarters—possibly a merchant’s personal treasure.",
+      "artifactName": "Gold Ring",
+      "blurb": "Found near crew quarters—possibly a merchant’s personal treasure",
       "image": "images/artifacts/gold_ring.png",
       "quadrant": 1,
       "points": 6,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 26,
       "artifactKey": "gold_ring",
-      "artifactName": "Gold Ring with Gemstone",
-      "blurb": "Some rings retained pearls; others held only empty bezels.",
+      "artifactName": "Gold Ring",
+      "blurb": "Some rings retained pearls; others held only empty bezels",
       "image": "images/artifacts/gold_ring.png",
       "quadrant": 2,
       "points": 6,
@@ -270,24 +297,23 @@
     {
       "id": 27,
       "artifactKey": "gold_ring",
-      "artifactName": "Gold Ring with Gemstone",
+      "artifactName": "Gold Ring",
       "blurb": "Song-era goldwork reveals advanced metallurgy and sentimentality.",
       "image": "images/artifacts/gold_ring.png",
       "quadrant": 3,
       "points": 6,
-      "foundBy": null
+      "foundBy": "G"
     },
     {
       "id": 28,
       "artifactKey": "gold_ring",
-      "artifactName": "Gold Ring with Gemstone",
+      "artifactName": "Gold Ring",
       "blurb": "Its small size hints at a woman’s ring—perhaps a farewell gift.",
       "image": "images/artifacts/gold_ring.png",
       "quadrant": 4,
       "points": 6,
-      "foundBy": null
+      "foundBy": "G"
     },
-
     {
       "id": 29,
       "artifactKey": "gold_necklace",
@@ -296,7 +322,7 @@
       "image": "images/artifacts/gold_necklace.png",
       "quadrant": 1,
       "points": 7,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 30,
@@ -306,7 +332,7 @@
       "image": "images/artifacts/gold_necklace.png",
       "quadrant": 2,
       "points": 7,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 31,
@@ -316,7 +342,7 @@
       "image": "images/artifacts/gold_necklace.png",
       "quadrant": 3,
       "points": 7,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 32,
@@ -326,54 +352,52 @@
       "image": "images/artifacts/gold_necklace.png",
       "quadrant": 4,
       "points": 7,
-      "foundBy": null
+      "foundBy": "G"
     },
-
     {
       "id": 33,
       "artifactKey": "gilded_bracelet",
-      "artifactName": "Gilded Dragon-Pattern Bracelet",
+      "artifactName": "Gilded Dragon Bracelet",
       "blurb": "Two dragons chasing a pearl—a symbol of imperial power and protection.",
       "image": "images/artifacts/gilded_bracelet.jpg",
       "quadrant": 1,
       "points": 8,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 34,
       "artifactKey": "gilded_bracelet",
-      "artifactName": "Gilded Dragon-Pattern Bracelet",
+      "artifactName": "Gilded Dragon Bracelet",
       "blurb": "Scholars debate whether such pieces were bracelets or decorative fittings.",
       "image": "images/artifacts/gilded_bracelet.jpg",
       "quadrant": 2,
       "points": 8,
-      "foundBy": null
+      "foundBy": "H"
     },
     {
       "id": 35,
       "artifactKey": "gilded_bracelet",
-      "artifactName": "Gilded Dragon-Pattern Bracelet",
-      "blurb": "Represents fusion of Chinese symbolism and maritime craftsmanship.",
+      "artifactName": "Gilded Dragon Bracelet",
+      "blurb": "Represents fusion of Chinese symbolism and maritime craftsmanship",
       "image": "images/artifacts/gilded_bracelet.jpg",
       "quadrant": 3,
       "points": 8,
-      "foundBy": null
+      "foundBy": "G"
     },
     {
       "id": 36,
       "artifactKey": "gilded_bracelet",
-      "artifactName": "Gilded Dragon-Pattern Bracelet",
+      "artifactName": "Gilded Dragon Bracelet",
       "blurb": "Its meaning remains thrillingly unsettled between adornment and ritual.",
       "image": "images/artifacts/gilded_bracelet.jpg",
       "quadrant": 4,
       "points": 8,
-      "foundBy": null
+      "foundBy": "G"
     },
-
     {
       "id": 37,
       "artifactKey": "gilded_belt",
-      "artifactName": "Gilded Belt with Persian Influence",
+      "artifactName": "Gilded Belt Buckle",
       "blurb": "A 1.7-meter belt woven from gilded strands, echoing West Asian metalwork.",
       "image": "images/artifacts/gilded_belt.jpg",
       "quadrant": 1,
@@ -383,7 +407,7 @@
     {
       "id": 38,
       "artifactKey": "gilded_belt",
-      "artifactName": "Gilded Belt with Persian Influence",
+      "artifactName": "Gilded Belt Buckle",
       "blurb": "Its clasp and scroll pattern reflect Tang-to-Song cross-cultural exchange.",
       "image": "images/artifacts/gilded_belt.jpg",
       "quadrant": 2,
@@ -393,7 +417,7 @@
     {
       "id": 39,
       "artifactKey": "gilded_belt",
-      "artifactName": "Gilded Belt with Persian Influence",
+      "artifactName": "Gilded Belt Buckle",
       "blurb": "Combines Chinese craftsmanship with Persian aesthetic geometry.",
       "image": "images/artifacts/gilded_belt.jpg",
       "quadrant": 3,
@@ -403,12 +427,13 @@
     {
       "id": 40,
       "artifactKey": "gilded_belt",
-      "artifactName": "Gilded Belt with Persian Influence",
+      "artifactName": "Gilded Belt Buckle",
       "blurb": "A masterpiece of East-West fashion along the Maritime Silk Road.",
       "image": "images/artifacts/gilded_belt.jpg",
       "quadrant": 4,
       "points": 10,
-      "foundBy": null
+      "foundBy": "H"
     }
   ]
 }
+
