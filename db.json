@@ -26,11 +26,15 @@
     },
     {
       "name": "G",
-      "score": 45
+      "score": 50
     },
     {
       "name": "H",
-      "score": 103
+      "score": 128
+    },
+    {
+      "name": "i",
+      "score": 59
     }
   ],
   "fragments": [
@@ -72,7 +76,7 @@
       "image": "images/artifacts/empty_box.jpg",
       "quadrant": 4,
       "points": 0,
-      "foundBy": null
+      "foundBy": "i"
     },
     {
       "id": 5,
@@ -102,7 +106,7 @@
       "image": "images/artifacts/coins.jpg",
       "quadrant": 3,
       "points": 1,
-      "foundBy": null
+      "foundBy": "i"
     },
     {
       "id": 8,
@@ -182,7 +186,7 @@
       "image": "images/artifacts/longquan_plate.jpg",
       "quadrant": 3,
       "points": 3,
-      "foundBy": null
+      "foundBy": "i"
     },
     {
       "id": 16,
@@ -232,7 +236,7 @@
       "image": "images/artifacts/white_ewer.png",
       "quadrant": 4,
       "points": 4,
-      "foundBy": null
+      "foundBy": "i"
     },
     {
       "id": 21,
@@ -242,7 +246,7 @@
       "image": "images/artifacts/jade_arhat.jpg",
       "quadrant": 1,
       "points": 5,
-      "foundBy": null
+      "foundBy": "i"
     },
     {
       "id": 22,
@@ -252,7 +256,7 @@
       "image": "images/artifacts/jade_arhat.jpg",
       "quadrant": 2,
       "points": 5,
-      "foundBy": null
+      "foundBy": "i"
     },
     {
       "id": 23,
@@ -292,7 +296,7 @@
       "image": "images/artifacts/gold_ring.png",
       "quadrant": 2,
       "points": 6,
-      "foundBy": null
+      "foundBy": "i"
     },
     {
       "id": 27,
@@ -422,7 +426,7 @@
       "image": "images/artifacts/gilded_belt.jpg",
       "quadrant": 3,
       "points": 10,
-      "foundBy": null
+      "foundBy": "i"
     },
     {
       "id": 40,
@@ -436,4 +440,3 @@
     }
   ]
 }
-
