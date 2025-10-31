@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Crimson+Text:ital@0;1&display=swap");
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: "Crimson Text", serif;
@@ -11,19 +15,25 @@ body {
 }
 
 /* ---------------- PAGE ---------------- */
-.page{
+.page {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 /* ---------------- LEFT PANEL ---------------- */
 .left-panel {
-  width: 20%;
+  display: flex;
+  flex-direction: column;
+  min-width: 20%;
+  max-width: 20%;
   background: rgba(0, 15, 30, 0.85);
   border-right: 2px solid rgba(0, 100, 150, 0.5);
   padding: 20px;
   color: #b9e8ff;
+  overflow-y: auto;
 }
 
 h2 {
@@ -34,10 +44,15 @@ h2 {
   text-shadow: 0 0 10px #00faff;
 }
 
-#leaderboard {
-  list-style: none;
+.scores {
+  display: flex;
+  flex-direction: column;
   height: 50%;
+}
+
+#leaderboard {
   overflow-y: auto;
+  list-style: none;
   margin-bottom: 20px;
 }
 
@@ -45,11 +60,15 @@ h2 {
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.finds {
+  height: 50%;
 }
 
 /* ---------------- SCENE ---------------- */
-header{
+header {
   text-align: center;
 }
 
@@ -67,13 +86,14 @@ p {
   line-height: 1.6;
 }
 
-img{
+img {
   max-width: 100%;
 }
 
 /* ---------------- RIGHT PANEL ---------------- */
 .right-panel {
-  width: 20%;
+  min-width: 20%;
+  max-width: 20%;
   background: rgba(0, 15, 30, 0.85);
   border-left: 2px solid rgba(0, 100, 150, 0.5);
   padding: 20px;
@@ -91,11 +111,11 @@ img{
   position: relative;
   width: 110px;
   height: 110px;
-  border: 1px solid rgba(255,255,255,0.1);
-  background: rgba(0,20,40,0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 20, 40, 0.6);
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,255,255,0.2);
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.2);
 }
 
 .thumb-slice {
@@ -108,14 +128,37 @@ img{
   transition: opacity 0.4s;
 }
 
-.thumb-slice.q1 { top: 0; left: 0; background-position: top left; }
-.thumb-slice.q2 { top: 0; right: 0; background-position: top right; }
-.thumb-slice.q3 { bottom: 0; left: 0; background-position: bottom left; }
-.thumb-slice.q4 { bottom: 0; right: 0; background-position: bottom right; }
+.thumb-slice.q1 {
+  top: 0;
+  left: 0;
+  background-position: top left;
+}
 
-.thumb-slice.found { opacity: 1; }
+.thumb-slice.q2 {
+  top: 0;
+  right: 0;
+  background-position: top right;
+}
 
-.controls { margin-top: 18px; }
+.thumb-slice.q3 {
+  bottom: 0;
+  left: 0;
+  background-position: bottom left;
+}
+
+.thumb-slice.q4 {
+  bottom: 0;
+  right: 0;
+  background-position: bottom right;
+}
+
+.thumb-slice.found {
+  opacity: 1;
+}
+
+.controls {
+  margin-top: 18px;
+}
 
 #username {
   background: rgba(0, 50, 80, 0.5);
@@ -137,15 +180,22 @@ img{
   font-family: "Cinzel Decorative", serif;
 }
 
-#message { display: block; margin-top: 10px; color: #80d4ff; }
+#message {
+  display: block;
+  margin-top: 10px;
+  color: #80d4ff;
+}
 
 /* ---------------- BUTTON ---------------- */
 .collect {
   position: absolute;
-  bottom: 80px;      /* moved lower */
-  left: 120px;       /* placed toward left */
+  bottom: 80px;
+  /* moved lower */
+  left: 120px;
+  /* placed toward left */
   font-family: "Cinzel Decorative", serif;
-  font-size: 1.1rem; /* smaller size */
+  font-size: 1.1rem;
+  /* smaller size */
   background: radial-gradient(circle, #004b63, #002a3d);
   padding: 10px 20px;
   border: 2px solid #00c6ff;
@@ -164,9 +214,17 @@ img{
 }
 
 @keyframes floating {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* ---------------- FOUND CARD ---------------- */
@@ -187,15 +245,17 @@ img{
   backdrop-filter: blur(4px);
 }
 
-.card.hidden { display: none; }
+.card.hidden {
+  display: none;
+}
 
 .artifact-visual {
   width: 160px;
   height: 160px;
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   overflow: hidden;
   border-radius: 6px;
-  box-shadow: 0 0 12px rgba(0,255,255,0.25);
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.25);
 }
 
 #artifactSlice {
@@ -205,11 +265,35 @@ img{
   background-repeat: no-repeat;
 }
 
-.q1 { background-position: top left; }
-.q2 { background-position: top right; }
-.q3 { background-position: bottom left; }
-.q4 { background-position: bottom right; }
+.q1 {
+  background-position: top left;
+}
 
-.artifact-info { flex: 1; color: #c9f8ff; }
-#artifactName { font-family: "Cinzel Decorative", serif; font-size: 1.1rem; margin-bottom: 4px; }
-#artifactBlurb { font-size: 0.9rem; color: #a7d6e6; font-style: italic; }
+.q2 {
+  background-position: top right;
+}
+
+.q3 {
+  background-position: bottom left;
+}
+
+.q4 {
+  background-position: bottom right;
+}
+
+.artifact-info {
+  flex: 1;
+  color: #c9f8ff;
+}
+
+#artifactName {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+#artifactBlurb {
+  font-size: 0.9rem;
+  color: #a7d6e6;
+  font-style: italic;
+}

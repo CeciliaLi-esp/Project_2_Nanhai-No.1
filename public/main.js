@@ -5,6 +5,8 @@ const $ = (s) => document.querySelector(s);
 socket.on('server-full', (data) => {
   msg.textContent = data.message;
   alert(data.message); // Show an alert so users definitely see it
+  enterBtn.disabled = true;
+  collectBtn.disabled = true;
 });
 
 const bgm = $("#bgm");
