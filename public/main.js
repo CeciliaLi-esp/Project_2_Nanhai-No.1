@@ -2,6 +2,11 @@
 const socket = io();
 const $ = (s) => document.querySelector(s);
 
+socket.on('server-full', (data) => {
+  msg.textContent = data.message;
+  alert(data.message); // Show an alert so users definitely see it
+});
+
 const bgm = $("#bgm");
 const usernameInput = $("#username");
 const enterBtn = $("#enterBtn");
@@ -37,7 +42,7 @@ enterBtn.addEventListener("click", function () {
   if (!name) { msg.textContent = "Please enter your name."; return; }
   activateAudioOnce();
   registerPlayer(name).then(ret => {
-    msg.textContent = ret && ret.ok ? "Welcome, diver. Ready to collect?" : "Registration failed.";
+    msg.textContent = ret && ret.ok ? "Ready to collect?" : "Registration failed.";
   });
 });
 

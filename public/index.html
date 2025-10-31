@@ -1,17 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <title>Nanhai No.1 – Multiplayer Underwater Archaeology</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-  <body>
+
+<body>
+  <!-------------- audio -------------->
   <audio id="bgm" src="sounds/underwater_sound.mp3" preload="auto" loop muted></audio>
   <audio id="pieceSound" src="sounds/One_Piece_Sound.mp3" preload="auto"></audio>
 
+  <!-------------- Page -------------->
+  <section class="page">
 
-  <div class="page">
-    <aside class="left-panel">
+    <!-------------- left panel -------------->
+    <section class="left-panel">
       <h2>Divers & Scores</h2>
       <ul id="leaderboard"></ul>
 
@@ -27,31 +32,35 @@
           </div>
         </div>
       </section>
-    </aside>
+    </section>
 
-    <main class="scene">
+    <!-------------- middle panel -------------->
+    <section class="scene">
+      <!-------------- Header -------------->
       <header class="intro">
         <h1>Nanhai No.1 Shipwreck</h1>
-        <p class="tagline">Welcome, diver. Explore the seabed and uncover the treasures of the Maritime Silk Road.</p>
+        <p>Welcome, diver. Explore the seabed and uncover the treasures of the Maritime Silk Road.</p>
         <div class="controls">
           <input id="username" placeholder="Enter your name" />
           <button id="enterBtn">Join Dive</button>
-          <span id="message"></span>
+          <p id="message"></p>
         </div>
       </header>
-      <section class="ocean-layer">
-        <img class="bg" src="images/seabed.jpeg" alt="Seabed background" />
-        <button id="collectBtn" class="collect">Collect Artifact</button>
-      </section>
-    </main>
+      <!-------------- Game -------------->
+      <img class="bg" src="images/seabed.jpeg" alt="Seabed background" />
+      <button id="collectBtn" class="collect">Collect Artifact</button>
+    </section>
 
-    <aside class="right-panel">
+    <!-------------- right panel -------------->
+    <section class="right-panel">
       <h2>Artifact Gallery</h2>
       <div id="gallery" class="gallery"></div>
-    </aside>
-  </div>
+    </section>
+  </section>
 
+  <!-------------- scripts -------------->
   <script src="/socket.io/socket.io.js"></script>
   <script src="main.js"></script>
 </body>
+
 </html>

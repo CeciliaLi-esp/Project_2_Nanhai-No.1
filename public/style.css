@@ -10,22 +10,23 @@ body {
   letter-spacing: 0.3px;
 }
 
-.page {
+/* ---------------- PAGE ---------------- */
+.page{
   display: flex;
-  height: 100vh;
-  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 /* ---------------- LEFT PANEL ---------------- */
 .left-panel {
-  width: 280px;
+  width: 20%;
   background: rgba(0, 15, 30, 0.85);
   border-right: 2px solid rgba(0, 100, 150, 0.5);
   padding: 20px;
   color: #b9e8ff;
 }
 
-.left-panel h2 {
+h2 {
   font-family: "Cinzel Decorative", serif;
   text-align: center;
   margin-bottom: 12px;
@@ -35,7 +36,7 @@ body {
 
 #leaderboard {
   list-style: none;
-  max-height: 40vh;
+  height: 50%;
   overflow-y: auto;
   margin-bottom: 20px;
 }
@@ -47,21 +48,36 @@ body {
   border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
+/* ---------------- SCENE ---------------- */
+header{
+  text-align: center;
+}
+
+header h1 {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 2.4rem;
+  color: #bffaff;
+  text-shadow: 0 0 25px #004466, 0 0 40px #00ccff;
+}
+
+p {
+  margin-top: 10px;
+  font-style: italic;
+  color: #aad7f8;
+  line-height: 1.6;
+}
+
+img{
+  max-width: 100%;
+}
+
 /* ---------------- RIGHT PANEL ---------------- */
 .right-panel {
-  width: 280px;
+  width: 20%;
   background: rgba(0, 15, 30, 0.85);
   border-left: 2px solid rgba(0, 100, 150, 0.5);
   padding: 20px;
   color: #b9e8ff;
-}
-
-.right-panel h2 {
-  font-family: "Cinzel Decorative", serif;
-  text-align: center;
-  color: #bffaff;
-  text-shadow: 0 0 10px #00faff;
-  margin-bottom: 12px;
 }
 
 /* Gallery grid */
@@ -99,42 +115,6 @@ body {
 
 .thumb-slice.found { opacity: 1; }
 
-/* ---------------- SCENE ---------------- */
-.scene {
-  flex: 1;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Centered intro box — wider to prevent line break */
-.intro {
-  position: absolute;
-  top: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  width: 70%;  /* increased width */
-  background: rgba(0, 20, 40, 0.45);
-  padding: 25px 30px;
-  border-radius: 10px;
-  box-shadow: 0 0 25px rgba(0, 180, 255, 0.25);
-  text-align: center;
-}
-
-.intro h1 {
-  font-family: "Cinzel Decorative", serif;
-  font-size: 2.4rem;
-  color: #bffaff;
-  text-shadow: 0 0 25px #004466, 0 0 40px #00ccff;
-}
-
-.tagline {
-  margin-top: 10px;
-  font-style: italic;
-  color: #aad7f8;
-  line-height: 1.6;
-}
-
 .controls { margin-top: 18px; }
 
 #username {
@@ -158,22 +138,6 @@ body {
 }
 
 #message { display: block; margin-top: 10px; color: #80d4ff; }
-
-/* ---------------- BACKGROUND ---------------- */
-.ocean-layer {
-  position: absolute;
-  top: 200px; left: 0; right: 0; bottom: 0;
-  overflow: hidden;
-}
-
-.ocean-layer .bg {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  opacity: 0.9;
-  filter: brightness(0.8) blur(1px);
-}
 
 /* ---------------- BUTTON ---------------- */
 .collect {

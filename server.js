@@ -19,6 +19,10 @@ const io = new Server(server);
 app.use(express.json());
 app.use("/", express.static(path.join(__dirname, "public")));
 
+// variables to limit the amount of users on the server
+const MAX_USERS = 4; //max amount of users
+let activeUsers = 0; //active users 
+
 // ------------------ Database ------------------
 const adapter = new JSONFile(path.join(__dirname, "db.json"));
 const db = new Low(adapter);
@@ -95,7 +99,7 @@ function startServer() {
 
       const available = db.data.fragments.filter(f => !f.foundBy);
 
-      // 🌀 Reset when all found
+      // Reset when all found
       if (available.length === 0) {
         db.data.players.forEach(p => p.score = 0);
         db.data.fragments = buildFragments();
@@ -107,12 +111,12 @@ function startServer() {
         return;
       }
 
-      // 🎯 Random fragment
+      // Random fragment
       const pick = available[Math.floor(Math.random() * available.length)];
       pick.foundBy = name;
       player.score += pick.points;
 
-      // 🎁 Bonus for completing full artifact
+      // Bonus for completing full artifact
       const related = db.data.fragments.filter(f => f.artifactKey === pick.artifactKey && f.foundBy);
       if (related.length === 4) {
         const contributors = new Set(related.map(f => f.foundBy));
@@ -130,8 +134,26 @@ function startServer() {
   // Data for gallery
   app.get("/data", (req, res) => db.read().then(() => res.json(db.data)));
 
-  io.on("connection", socket => socket.emit("leaderboard-update", db.data.players));
+  //active users tracking
+  io.on("connection", socket => {
+    if (activeUsers >= MAX_USERS) {
+      socket.emit('server-full', { message: 'Server is at capacity. Please try again later.' });
+      socket.disconnect(true);
+      return;
+    }
+
+    activeUsers++;
+    console.log(`User connected. Active users: ${activeUsers}/${MAX_USERS}`);
+    
+    //leaderboard update
+    socket.emit("leaderboard-update", db.data.players);
+
+    socket.on('disconnect', () => {
+      activeUsers--;
+      console.log(`User disconnected. Active users: ${activeUsers}/${MAX_USERS}`);
+    });
+  });
 
   const PORT = 3000;
-  server.listen(PORT, () => console.log(`🌊 Server running on http://localhost:${PORT}`));
+  server.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
 }
