@@ -29,8 +29,8 @@ body {
   flex-direction: column;
   min-width: 20%;
   max-width: 20%;
-  background: rgba(0, 15, 30, 0.85);
-  border-right: 2px solid rgba(0, 100, 150, 0.5);
+  background: #000f1e;
+  border-right: 2px solid #006496;
   padding: 20px;
   color: #b9e8ff;
   overflow-y: auto;
@@ -60,7 +60,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   padding: 5px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #006496;
 }
 
 .finds {
@@ -94,8 +94,8 @@ img {
 .right-panel {
   min-width: 20%;
   max-width: 20%;
-  background: rgba(0, 15, 30, 0.85);
-  border-left: 2px solid rgba(0, 100, 150, 0.5);
+  background: #000f1e;
+  border-left: 2px solid #006496;
   padding: 20px;
   color: #b9e8ff;
 }

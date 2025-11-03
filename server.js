@@ -28,16 +28,16 @@ const adapter = new JSONFile(path.join(__dirname, "db.json"));
 const db = new Low(adapter);
 
 const ARTIFACTS = [
-  { key: "empty_box", name: "Empty Box", blurb: "An empty chest, yet full of mystery.", points: 0, image: "images/artifacts/empty_box.jpg" },
-  { key: "coins", name: "Copper Coins", blurb: "Traces of ancient trade routes engraved in metal.", points: 1, image: "images/artifacts/coins.jpg" },
-  { key: "silver_ingot", name: "Stamped Silver Ingot", blurb: "Merchant stamps tell stories of distant cities.", points: 2, image: "images/artifacts/silver_ingot.png" },
-  { key: "longquan", name: "Longquan Celadon Plate", blurb: "Delicate glaze that once traveled oceans.", points: 3, image: "images/artifacts/longquan_plate.jpg" },
-  { key: "white_ewer", name: "White Glazed Ewer", blurb: "Graceful porcelain made for everyday voyage life.", points: 4, image: "images/artifacts/white_ewer.png" },
-  { key: "jade_arhat", name: "Jade Arhat Figurine", blurb: "Tiny sculpture, faith and trade intertwined.", points: 5, image: "images/artifacts/jade_arhat.jpg" },
-  { key: "gold_ring", name: "Gold Ring", blurb: "A personal treasure from someone aboard.", points: 6, image: "images/artifacts/gold_ring.png" },
-  { key: "gold_necklace", name: "Gold Necklace", blurb: "Hidden in a lacquer box for centuries.", points: 7, image: "images/artifacts/gold_necklace.png" },
-  { key: "gilded_bracelet", name: "Gilded Dragon Bracelet", blurb: "Twin dragons chasing a pearl—a myth in metal.", points: 8, image: "images/artifacts/gilded_bracelet.jpg" },
-  { key: "gilded_belt", name: "Gilded Belt Buckle", blurb: "Persian-inspired design, a Silk Road fusion.", points: 10, image: "images/artifacts/gilded_belt.jpg" }
+  { key: "empty_box", name: "Empty Box", blurb: "An empty chest, yet full of mystery.", points: 0, image: "images/artifacts/Box.png" },
+  { key: "coins", name: "Copper Coins", blurb: "Traces of ancient trade routes engraved in metal.", points: 1, image: "images/artifacts/Coin.png" },
+  { key: "silver_ingot", name: "Stamped Silver Ingot", blurb: "Merchant stamps tell stories of distant cities.", points: 2, image: "images/artifacts/SilverIngot.png" },
+  { key: "longquan", name: "Longquan Celadon Plate", blurb: "Delicate glaze that once traveled oceans.", points: 3, image: "images/artifacts/Plate.png" },
+  { key: "white_ewer", name: "White Glazed Ewer", blurb: "Graceful porcelain made for everyday voyage life.", points: 4, image: "images/artifacts/Ewer.png" },
+  { key: "jade_arhat", name: "Jade Arhat Figurine", blurb: "Tiny sculpture, faith and trade intertwined.", points: 5, image: "images/artifacts/JadeFigure.png" },
+  { key: "gold_ring", name: "Gold Ring", blurb: "A personal treasure from someone aboard.", points: 6, image: "images/artifacts/Ring.png" },
+  { key: "gold_necklace", name: "Gold Necklace", blurb: "Hidden in a lacquer box for centuries.", points: 7, image: "images/artifacts/Necklace.png" },
+  { key: "gilded_bracelet", name: "Gilded Dragon Bracelet", blurb: "Twin dragons chasing a pearl—a myth in metal.", points: 8, image: "images/artifacts/Bracelet.png" },
+  { key: "gilded_belt", name: "Gilded Belt Buckle", blurb: "Persian-inspired design, a Silk Road fusion.", points: 10, image: "images/artifacts/Belt.png" }
 ];
 
 function buildFragments() {

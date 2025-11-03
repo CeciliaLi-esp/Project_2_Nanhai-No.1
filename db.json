@@ -1,9 +1,6 @@
 {
   "players": [
-    {
-      "name": "asx",
-      "score": 49
-    }
+    
   ],
   "fragments": [
     {
@@ -11,10 +8,10 @@
       "artifactKey": "empty_box",
       "artifactName": "Empty Box",
       "blurb": "An empty chest, yet full of mystery.",
-      "image": "images/artifacts/empty_box.jpg",
+      "image": "images/artifacts/Box.png",
       "quadrant": 1,
       "points": 0,
-      "foundBy": null
+      "foundBy": "Helena"
     }
   ]
 }
