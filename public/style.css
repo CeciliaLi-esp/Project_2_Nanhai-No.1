@@ -68,6 +68,11 @@ h2 {
 }
 
 /* ---------------- SCENE ---------------- */
+
+.scene{
+  padding: 20px;
+}
+
 header {
   text-align: center;
 }
@@ -187,43 +192,33 @@ img {
 }
 
 /* ---------------- BUTTON ---------------- */
+
+/* without this the sparkle button goes outside the div with the image */
+#collectContainer {
+  position: relative;
+}
+
 .collect {
   position: absolute;
-  bottom: 80px;
-  /* moved lower */
-  left: 120px;
-  /* placed toward left */
-  font-family: "Cinzel Decorative", serif;
-  font-size: 1.1rem;
-  /* smaller size */
-  background: radial-gradient(circle, #004b63, #002a3d);
-  padding: 10px 20px;
-  border: 2px solid #00c6ff;
-  border-radius: 8px;
-  color: #d7faff;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
-  z-index: 4;
-  text-shadow: 0 0 10px #00ffff;
-  animation: floating 3s ease-in-out infinite;
 }
 
-.collect:hover {
-  background: radial-gradient(circle, #0088aa, #002233);
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #00f0ff;
-}
-
-@keyframes floating {
+@keyframes blinking {
   0% {
-    transform: translateY(0);
+    transform: scale(0);
+    opacity: 0.5;
   }
 
   50% {
-    transform: translateY(-4px);
+    transform: scale(1);
+    opacity: 1;
   }
 
   100% {
-    transform: translateY(0);
+    transform: scale(0);
+    opacity: 0.5;
   }
 }
 
@@ -237,6 +232,8 @@ img {
 
 .card {
   display: flex;
+  flex-direction: column;
+  text-align: center;
   gap: 15px;
   background: rgba(0, 30, 50, 0.7);
   padding: 12px;

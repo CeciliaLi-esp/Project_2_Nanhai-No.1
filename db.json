@@ -1,17 +1,8 @@
 {
   "players": [
-    
+
   ],
   "fragments": [
-    {
-      "id": 1,
-      "artifactKey": "empty_box",
-      "artifactName": "Empty Box",
-      "blurb": "An empty chest, yet full of mystery.",
-      "image": "images/artifacts/Box.png",
-      "quadrant": 1,
-      "points": 0,
-      "foundBy": "Helena"
-    }
+
   ]
 }

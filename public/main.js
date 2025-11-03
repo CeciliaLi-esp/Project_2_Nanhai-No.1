@@ -2,13 +2,6 @@
 const socket = io();
 const $ = (s) => document.querySelector(s);
 
-socket.on('server-full', (data) => {
-  msg.textContent = data.message;
-  alert(data.message); // Show an alert so users definitely see it
-  enterBtn.disabled = true;
-  collectBtn.disabled = true;
-});
-
 const bgm = $("#bgm");
 const usernameInput = $("#username");
 const enterBtn = $("#enterBtn");
@@ -22,12 +15,90 @@ const artifactSlice = $("#artifactSlice");
 const artifactName = $("#artifactName");
 const artifactBlurb = $("#artifactBlurb");
 
+//Variables for sparkle button position animation
+const collectContainer = $("#collectContainer");
+let animationInterval = 1500; // variable to set how quickly the sparkle moves
+let intervalId;
+let isAnimating = true;
+
+//Checks if server is full
+socket.on('server-full', (data) => {
+  msg.textContent = data.message;
+  alert(data.message); // Show an alert if server is full 
+  enterBtn.disabled = true;
+  collectBtn.disabled = true;
+});
+
+//Sparkle button animation
+function getRandomPosition() {
+  // Dimensions
+  const containerWidth = collectContainer.offsetWidth;
+  const containerHeight = collectContainer.offsetHeight;
+  const btnWidth = collectBtn.offsetWidth;
+  const btnHeight = collectBtn.offsetHeight;
+
+  // Calculate max positions to keep button inside container
+  const maxX = containerWidth - btnWidth;
+  const maxY = containerHeight - btnHeight;
+
+  const randomX = Math.random() * maxX;
+  const randomY = Math.random() * maxY;
+
+  return { x: randomX, y: randomY };
+}
+
+function animateButton() {
+  collectBtn.style.animation = 'none';
+  collectBtn.offsetHeight;
+  collectBtn.style.animation = `blinking ${animationInterval}ms ease-in-out`;
+  const pos = getRandomPosition();
+  collectBtn.style.left = pos.x + 'px';
+  collectBtn.style.top = pos.y + 'px';
+}
+
+function startAnimation() {
+  // Initial position
+  const pos = getRandomPosition();
+  collectBtn.style.left = pos.x + 'px';
+  collectBtn.style.top = pos.y + 'px';
+
+  intervalId = setInterval(animateButton, animationInterval);
+}
+
+function updateInterval() {
+  const newInterval = parseInt(document.getElementById('intervalInput').value);
+  if (newInterval >= 500) {
+    animationInterval = newInterval;
+    if (isAnimating) {
+      clearInterval(intervalId);
+      startAnimation();
+    }
+  }
+}
+
+function toggleAnimation() {
+  if (isAnimating) {
+    clearInterval(intervalId);
+    collectBtn.style.animation = 'none';
+    isAnimating = false;
+  } else {
+    startAnimation();
+    isAnimating = true;
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  container = document.getElementById('collectContainer');
+  startAnimation();
+});
+
+//Audio
 let audioActivated = false;
 function activateAudioOnce() {
   if (!audioActivated) {
     audioActivated = true;
     bgm.muted = false;
-    bgm.play().catch(() => {});
+    bgm.play().catch(() => { });
   }
 }
 
@@ -77,10 +148,10 @@ collectBtn.addEventListener("click", function () {
       artifactSlice.className = "slice q" + frag.quadrant;
 
       const pieceSound = document.getElementById("pieceSound");
-if (pieceSound) {
-  pieceSound.currentTime = 0; 
-  pieceSound.play().catch(() => {});
-}
+      if (pieceSound) {
+        pieceSound.currentTime = 0;
+        pieceSound.play().catch(() => { });
+      }
 
       // --- Update leaderboard and gallery ---
       if (Array.isArray(data.leaderboard)) renderLeaderboard(data.leaderboard);
