@@ -234,6 +234,7 @@ img {
   display: flex;
   flex-direction: column;
   text-align: center;
+  align-items: center;
   gap: 15px;
   background: rgba(0, 30, 50, 0.7);
   padding: 12px;

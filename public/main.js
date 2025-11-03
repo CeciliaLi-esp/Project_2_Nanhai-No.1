@@ -21,6 +21,9 @@ let animationInterval = 1500; // variable to set how quickly the sparkle moves
 let intervalId;
 let isAnimating = true;
 
+//audio
+let audioActivated = false;
+
 //Checks if server is full
 socket.on('server-full', (data) => {
   msg.textContent = data.message;
@@ -92,8 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
   startAnimation();
 });
 
-//Audio
-let audioActivated = false;
+//Audio activation
 function activateAudioOnce() {
   if (!audioActivated) {
     audioActivated = true;
@@ -115,7 +117,7 @@ enterBtn.addEventListener("click", function () {
   if (!name) { msg.textContent = "Please enter your name."; return; }
   activateAudioOnce();
   registerPlayer(name).then(ret => {
-    msg.textContent = ret && ret.ok ? "Ready to collect?" : "Registration failed.";
+    msg.textContent = ret && ret.ok ? "Ready to collect? Click on the sparkle to uncover hidden treasures!" : "Registration failed.";
   });
 });
 
