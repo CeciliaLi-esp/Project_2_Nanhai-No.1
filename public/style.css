@@ -196,7 +196,6 @@ img {
 #message {
   display: block;
   margin-top: 10px;
-  color: #80d4ff;
 }
 
 /* ---------------- SPARKLE BUTTON ---------------- */
@@ -395,7 +394,6 @@ img {
 
 .completion-content h2 {
   font-family: "Cinzel Decorative", serif;
-  font-size: 3rem;
   margin-bottom: 10px;
 }
 

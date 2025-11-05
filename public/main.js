@@ -122,8 +122,8 @@ function showCompletionAnimation(artifactKey) {
   document.body.appendChild(overlay);
 
   // Play completion sound
-  //const completionSound = new Audio("sounds/completion.mp3");
-  //completionSound.play().catch(() => { });
+  const completionSound = new Audio("sounds/completion.mp3");
+  completionSound.play().catch(() => { });
 
   // Remove after animation
   setTimeout(() => {
@@ -159,7 +159,7 @@ enterBtn.addEventListener("click", function () {
   });
 });
 
-// -------------------- Player collects a fragment --------------------------
+// ------------------------ Player collects a fragment -----------------------------
 collectBtn.addEventListener("click", function () {
   const name = (usernameInput.value || "").trim();
   if (!name) { msg.textContent = "Please enter your name first."; return; }
