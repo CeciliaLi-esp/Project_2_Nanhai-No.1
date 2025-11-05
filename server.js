@@ -101,7 +101,8 @@ function startServer() {
 
       // Reset when all found
       if (available.length === 0) {
-        db.data.players.forEach(p => p.score = 0);
+        //resets players instead of only reseting scores like the previous version 
+        db.data.players = [];
         db.data.fragments = buildFragments();
         db.write().then(() => {
           io.emit("leaderboard-update", db.data.players);

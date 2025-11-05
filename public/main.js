@@ -139,6 +139,12 @@ collectBtn.addEventListener("click", function () {
         return;
       }
 
+      //without this the first time you find something it shows an empty div for the fragment info
+      if (!data.fragment) {
+        msg.textContent = data.message;
+        return;
+      }
+
       const frag = data.fragment;
       msg.textContent = data.message;
 
