@@ -221,7 +221,7 @@ img {
   position: absolute;
   border: none;
   background-color: transparent;
-  cursor: pointer;
+  cursor: url('images/cursor.png'), pointer;
 }
 
 @keyframes blinking {
