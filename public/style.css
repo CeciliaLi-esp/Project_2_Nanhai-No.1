@@ -199,7 +199,7 @@ img {
   color: #80d4ff;
 }
 
-/* ---------------- BUTTON ---------------- */
+/* ---------------- SPARKLE BUTTON ---------------- */
 
 /* without this the sparkle button goes outside the div with the image */
 #collectContainer {
@@ -214,7 +214,8 @@ img {
 #collectContainer .bg {
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* Scales image to cover container without distortion */
+  object-fit: cover;
+  /* Scales image to cover container without distortion */
 }
 
 .collect {
@@ -313,4 +314,132 @@ img {
   font-size: 0.9rem;
   color: #a7d6e6;
   font-style: italic;
+}
+
+/* ---------------- COMPLETION ANIMATION ---------------- */
+
+/* Completion overlay */
+.completion-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeIn 0.3s ease-in;
+}
+
+.completion-overlay.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+.completion-content {
+  text-align: center;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.completion-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Different image for each artifact */
+.completion-content.empty_box .completion-image {
+  background-image: url('images/artifacts/Box.png');
+}
+
+.completion-content.coins .completion-image {
+  background-image: url('images/artifacts/Coin.png');
+}
+
+.completion-content.silver_ingot .completion-image {
+  background-image: url('images/artifacts/SilverIngot.png');
+}
+
+.completion-content.longquan .completion-image {
+  background-image: url('images/artifacts/Plate.png');
+}
+
+.completion-content.white_ewer .completion-image {
+  background-image: url('images/artifacts/Ewer.png');
+}
+
+.completion-content.jade_arhat .completion-image {
+  background-image: url('images/artifacts/JadeFigure.png');
+}
+
+.completion-content.gold_ring .completion-image {
+  background-image: url('images/artifacts/Ring.png');
+}
+
+.completion-content.gold_necklace .completion-image {
+  background-image: url('images/artifacts/Necklace.png');
+}
+
+.completion-content.gilded_bracelet .completion-image {
+  background-image: url('images/artifacts/Bracelet.png');
+}
+
+.completion-content.gilded_belt .completion-image {
+  background-image: url('images/artifacts/Belt.png');
+}
+
+.completion-content h2 {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+/* Keyframe animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
 }

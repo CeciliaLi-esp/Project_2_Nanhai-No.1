@@ -1,28 +1,37 @@
-// main.js — Full logic for player, gallery, and fragment display
 const socket = io();
 const $ = (s) => document.querySelector(s);
 
+// Audio
 const bgm = $("#bgm");
+let audioActivated = false;
+
+// Header
 const usernameInput = $("#username");
 const enterBtn = $("#enterBtn");
-const collectBtn = $("#collectBtn");
 const msg = $("#message");
-const leaderboard = $("#leaderboard");
+
+// Sparkle button
+const collectBtn = $("#collectBtn");
+
+// Right panel
 const gallery = $("#gallery");
 
+//left panel
+const leaderboard = $("#leaderboard");
+// Found artifact fragment
 const foundCard = $("#foundCard");
 const artifactSlice = $("#artifactSlice");
 const artifactName = $("#artifactName");
 const artifactBlurb = $("#artifactBlurb");
 
-//Variables for sparkle button position animation
+// Sparkle button position animation
 const collectContainer = $("#collectContainer");
-let animationInterval = 1500; // variable to set how quickly the sparkle moves
+let animationInterval = 2500; // variable to set how quickly the sparkle moves
 let intervalId;
 let isAnimating = true;
 
-//audio
-let audioActivated = false;
+// Completed animation
+let animationDuration = 1500; // variable to set the duration of the overlay
 
 //Checks if server is full
 socket.on('server-full', (data) => {
@@ -32,7 +41,9 @@ socket.on('server-full', (data) => {
   collectBtn.disabled = true;
 });
 
-//Sparkle button animation
+// ------------------------ Sparkle button animation -------------------------------
+
+//function to get a random position inside a div container 
 function getRandomPosition() {
   // Dimensions
   const containerWidth = collectContainer.offsetWidth;
@@ -90,12 +101,38 @@ function toggleAnimation() {
   }
 }
 
+//doesnt star the animation until the container is loaded 
 document.addEventListener('DOMContentLoaded', function () {
   container = document.getElementById('collectContainer');
   startAnimation();
 });
 
-//Audio activation
+// ---------------------- Artifact completion animation -------------------------
+function showCompletionAnimation(artifactKey) {
+  
+  // Create overlay
+  const overlay = document.createElement("div");
+  overlay.className = "completion-overlay";
+  overlay.innerHTML = `
+    <div class="completion-content ${artifactKey}">
+      <div class="completion-image"></div>
+      <h2>Artifact Complete!</h2>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+
+  // Play completion sound
+  //const completionSound = new Audio("sounds/completion.mp3");
+  //completionSound.play().catch(() => { });
+
+  // Remove after animation
+  setTimeout(() => {
+    overlay.classList.add("fade-out");
+    setTimeout(() => overlay.remove(), 500);
+  }, animationDuration);
+}
+
+// ----------------------- background audio activation -------------------------
 function activateAudioOnce() {
   if (!audioActivated) {
     audioActivated = true;
@@ -104,6 +141,7 @@ function activateAudioOnce() {
   }
 }
 
+// ------------------------------ Register player ------------------------------
 function registerPlayer(name) {
   return fetch("/new-player", {
     method: "POST",
@@ -121,7 +159,7 @@ enterBtn.addEventListener("click", function () {
   });
 });
 
-// ---- Player collects a fragment ----
+// -------------------- Player collects a fragment --------------------------
 collectBtn.addEventListener("click", function () {
   const name = (usernameInput.value || "").trim();
   if (!name) { msg.textContent = "Please enter your name first."; return; }
@@ -139,7 +177,7 @@ collectBtn.addEventListener("click", function () {
         return;
       }
 
-      //without this the first time you find something it shows an empty div for the fragment info
+      // Without this the first time you find something it shows an empty div for the fragment info
       if (!data.fragment) {
         msg.textContent = data.message;
         return;
@@ -155,10 +193,16 @@ collectBtn.addEventListener("click", function () {
       artifactSlice.style.backgroundImage = `url('${frag.image}')`;
       artifactSlice.className = "slice q" + frag.quadrant;
 
+      // Play sound
       const pieceSound = document.getElementById("pieceSound");
       if (pieceSound) {
         pieceSound.currentTime = 0;
         pieceSound.play().catch(() => { });
+      }
+
+      // Check if artifact is completed
+      if (data.completed) {
+        showCompletionAnimation(data.artifactKey);
       }
 
       // --- Update leaderboard and gallery ---
@@ -173,7 +217,7 @@ socket.on("fragment-found", function () {
   fetch("/data").then(r => r.json()).then(db => renderGallery(db.fragments));
 });
 
-// ---- Render leaderboard ----
+// ----------------------- Render leaderboard ------------------------------
 function renderLeaderboard(players) {
   leaderboard.innerHTML = "";
   players.slice().sort((a, b) => b.score - a.score).forEach(p => {
@@ -183,7 +227,7 @@ function renderLeaderboard(players) {
   });
 }
 
-// ---- Render gallery ----
+// ------------------------ Render gallery ---------------------------------
 function renderGallery(fragments) {
   if (!Array.isArray(fragments)) return;
   gallery.innerHTML = "";
@@ -209,14 +253,13 @@ function renderGallery(fragments) {
   });
 }
 
-// ---- Initial load ----
+// ------------------------------- Initial load -----------------------------
 fetch("/data")
   .then(res => res.json())
   .then(data => {
     renderLeaderboard(data.players);
     renderGallery(data.fragments);
   });
-
 
 document.addEventListener("click", activateAudioOnce, { once: true });
 document.addEventListener("keydown", activateAudioOnce, { once: true });
